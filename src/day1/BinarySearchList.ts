@@ -3,25 +3,22 @@ export default function bs_list(haystack: number[], needle: number): boolean {
   // check if value at the middle === needle, is greater or smaller
   // update start and end indices
   //
+  let lo = 0;
+  let hi = haystack.length;
 
-  function search (arr: number[], lo: number, hi: number, needle: number) {
-    let middle = Math.floor(lo + (hi - lo)/2)
-  
-    do {
-     if (arr[middle] === needle){
+  do{
+    const m = Math.floor(lo + (hi - lo)/2);
+    const v = haystack[m];
+
+    if (v === needle){
       return true;
-    } else if (needle > arr[middle]){
-      lo = middle +1;
-      search(arr, lo, hi, needle);
+    } else if (v > needle){
+      hi = m;
     } else {
-      hi = middle;
-      search(arr, lo, hi, needle);
+      lo = m +1;
     }
-    }
-    while (lo < hi);
 
-    return false;
-  }
+  }while(lo < hi);
   
-  search(haystack, 0, haystack.length, needle);
+  return false;
 }
