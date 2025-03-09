@@ -1,5 +1,4 @@
-## Developed live on twitch
-[ThePrimeagen](https://twitch.tv/ThePrimeagen)
+## Developed by [ThePrimeagen](https://twitch.tv/ThePrimeagen)live on twitch
 
 ### Supported Algorithm
 * Insertion sort
